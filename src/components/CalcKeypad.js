@@ -16,7 +16,7 @@ const CalcKeypad = (props) => {
 		{ val: '.', callback: () => props.updateValue('.') },
 		{ val: '0', callback: () => props.updateValue('0') },
 		{ val: '/', callback: () => props.updateValue('/') },
-		{ val: '*', callback: () => props.updateValue('*') },
+		{ val: '*', label: 'x', callback: () => props.updateValue('*') },
 	]
 
 	const handleClick = (value, btn) => {
@@ -63,7 +63,7 @@ const CalcKeypad = (props) => {
 					value={button.val}
 					onClick={(e) => handleClick(button.val, e.target)}
 					onKeyDown={props.handleKeyDown}
-					aria-label={button.val}
+					aria-label={button.label ? button.label : button.val}
 				>
 					{button.label || button.val}
 				</Button>
