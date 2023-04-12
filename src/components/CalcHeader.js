@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const CalcHeader = ({ getIsActiveByName, updateTheme }) => {
 	return (
 		<Header>
-			<Title>calc</Title>
+			<Title translate='no'>calc</Title>
 			<ThemeSwitch>
 				<Theme>THEME</Theme>
 				<Switch>
@@ -15,16 +15,19 @@ const CalcHeader = ({ getIsActiveByName, updateTheme }) => {
 					<SwitchBody>
 						<ThemeButton
 							value='darkBlue'
+							aria-label='Select dark blue color'
 							isActive={getIsActiveByName('darkBlue')}
-							onClick={(e) => updateTheme('darkBlue')}></ThemeButton>
+							onClick={e => updateTheme('darkBlue')}></ThemeButton>
 						<ThemeButton
 							value='lightGray'
+							aria-label='Select light gray color'
 							isActive={getIsActiveByName('lightGray')}
-							onClick={(e) => updateTheme('lightGray')}></ThemeButton>
+							onClick={e => updateTheme('lightGray')}></ThemeButton>
 						<ThemeButton
 							value='darkViolet'
+							aria-label='Select dark violet color'
 							isActive={getIsActiveByName('darkViolet')}
-							onClick={(e) => updateTheme('darkViolet')}></ThemeButton>
+							onClick={e => updateTheme('darkViolet')}></ThemeButton>
 					</SwitchBody>
 				</Switch>
 			</ThemeSwitch>
@@ -42,7 +45,7 @@ const Header = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: ${(props) => props.theme.calcText};
+	color: ${props => props.theme.calcText};
 `
 
 const ThemeSwitch = styled.div`
@@ -77,20 +80,22 @@ const SwitchBody = styled.div`
 	width: 7.1em;
 	height: 2.6em;
 	border-radius: 1.3em;
-	background-color: ${(props) => props.theme.sliderBg};
+	background-color: ${props => props.theme.sliderBg};
 `
 
 const ThemeButton = styled.button`
+	-webkit-appearance: none;
+	appearance: none;
 	height: 16px;
 	width: 16px;
 	border-radius: 50%;
 	border: none;
-	background-color: ${(props) => {
+	background-color: ${props => {
 		if (props.isActive) return props.theme.togglerBg
 		return props.theme.sliderBg
 	}};
 	&:hover {
-		background-color: ${(props) => {
+		background-color: ${props => {
 			if (props.isActive) return props.theme.togglerH
 			return props.theme.sliderBg
 		}};

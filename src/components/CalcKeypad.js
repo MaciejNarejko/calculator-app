@@ -72,6 +72,7 @@ const CalcKeypad = (props) => {
 				value='del'
 				onClick={(e) => handleDel(e.target)}
 				aria-label='del'
+				translate="no"
 			>
 				del
 			</DelButton>
@@ -79,6 +80,7 @@ const CalcKeypad = (props) => {
 				value='reset'
 				onClick={(e) => handleReset(e.target)}
 				aria-label='reset'
+				translate="no"
 			>
 				reset
 			</ResetButton>
@@ -109,7 +111,7 @@ const Keypad = styled.div`
 	border-radius: 0.625rem;
 	background-color: ${(props) => props.theme.keypadBg};
 
-	@media (min-width: 600px) {
+	@media screen and (min-width: 600px) {
 		padding: 1.7rem;
 		grid-column-gap: 1.2rem;
 		grid-row-gap: 1.2rem;
@@ -118,7 +120,7 @@ const Keypad = styled.div`
 
 const Button = styled.button`
 	font-family: 'League Spartan', sans-serif;
-	padding: 1rem 0.8rem 0.6rem 0.8rem;
+	padding: 1rem 0.7rem 0.6rem 0.7rem;
 	border-radius: 0.3rem;
 	border: none;
 	font-size: 2.7em;
@@ -129,19 +131,19 @@ const Button = styled.button`
 	text-align: center;
 	transition: background-color 0.2s, box-shadow, transform ease-in-out;
 
-	@media (min-width: 600px) {
-		height: 4rem;
-		font-size: 4em;
-	}
-
-	&:hover {
-		background-color: ${(props) => props.theme.mainKeyH};
-	}
-
 	&.active {
-		box-shadow: 0 0rem 0;
+		box-shadow: none;
 		transform: translateY(0.2rem);
 		background-color: ${(props) => props.theme.mainKeyH};
+	}
+
+	@media screen and (min-width: 600px) {
+		height: 4rem;
+		font-size: 4em;
+
+		&:hover {
+			background-color: ${(props) => props.theme.mainKeyH};
+		}
 	}
 `
 
@@ -153,18 +155,20 @@ const DelButton = styled(Button)`
 	background-color: ${(props) => props.theme.actionKeyBg};
 	box-shadow: 0 0.2rem 0 ${(props) => props.theme.actionKeySh};
 
-	&:hover {
-		background-color: ${(props) => props.theme.actionKeyH};
-	}
-
 	&.active {
-		box-shadow: 0 0rem 0;
+		box-shadow: none;
 		transform: translateY(0.2rem);
 		background-color: ${(props) => props.theme.actionKeyH};
 	}
-	@media (min-width: 600px) {
+
+	@media screen and (min-width: 600px) {
 		font-size: 2.8em;
+
+		&:hover {
+			background-color: ${(props) => props.theme.actionKeyH};
+		}
 	}
+	
 `
 const ResetButton = styled(Button)`
 	grid-area: 5 / 1 / 6 / 3;
@@ -175,17 +179,17 @@ const ResetButton = styled(Button)`
 	background-color: ${(props) => props.theme.actionKeyBg};
 	box-shadow: 0 0.2rem 0 ${(props) => props.theme.actionKeySh};
 
-	&:hover {
-		background-color: ${(props) => props.theme.actionKeyH};
-	}
-
 	&.active {
-		box-shadow: 0 0rem 0;
+		box-shadow: none;
 		transform: translateY(0.2rem);
 		background-color: ${(props) => props.theme.actionKeyH};
 	}
-	@media (min-width: 600px) {
+	@media screen and (min-width: 600px) {
 		font-size: 2.8em;
+
+		&:hover {
+			background-color: ${(props) => props.theme.actionKeyH};
+		}
 	}
 `
 const EqualButton = styled(Button)`
@@ -195,16 +199,18 @@ const EqualButton = styled(Button)`
 	background-color: ${(props) => props.theme.equalKeyBg};
 	box-shadow: 0 0.2rem 0 ${(props) => props.theme.equalKeySh};
 
-	&:hover {
-		background-color: ${(props) => props.theme.equalKeyH};
-	}
 
 	&.active {
-		box-shadow: 0 0rem 0;
+		box-shadow: none;
 		transform: translateY(0.2rem);
 		background-color: ${(props) => props.theme.equalKeyH};
 	}
-	@media (min-width: 600px) {
+
+	@media screen and (min-width: 600px) {
 		font-size: 2.8em;
+
+		&:hover {
+			background-color: ${(props) => props.theme.equalKeyH};
+		}
 	}
 `

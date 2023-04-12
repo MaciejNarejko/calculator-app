@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const CalcDisplay = (props) => {
-	return <Display data-testid='calc-display'>{props.value}</Display>
-}
+	const displayValue = props.value.replace(/\*/g, 'x');
+	return <Display data-testid='calc-display'>{displayValue}</Display>;
+  };
 export default CalcDisplay
 
 const Display = styled.div`
