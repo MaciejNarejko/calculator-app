@@ -1,0 +1,2 @@
+@import url(https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap);body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-ms-overflow-style:none;font-family:League Spartan,sans-serif;font-size:10px;margin:0;scrollbar-width:none}body::-webkit-scrollbar{display:none}#root{display:grid;height:calc(100vh - 3rem);padding:0 1.5rem;place-items:center}@media (min-width:600px){#root{padding:1.5rem}}footer{display:none;font-size:.8rem;letter-spacing:.05rem;padding:1.5rem;text-align:center}
+/*# sourceMappingURL=main.f2675625.css.map*/
